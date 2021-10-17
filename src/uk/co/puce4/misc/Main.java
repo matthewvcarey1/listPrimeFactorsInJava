@@ -20,7 +20,7 @@ public class Main {
 
 		ArrayList<Integer> primes = Sieve.primes(num);
 
-		ArrayList<Integer> factors = new ArrayList<Integer>();
+		ArrayList<Integer> factors = new ArrayList<>();
 		factors	= Factors.listFactors(num,primes, factors);
 		ArrayList<BaseExponent> lbe = BuildBaseExponentList.build(factors);
 		boolean first = true;
@@ -35,7 +35,11 @@ public class Main {
 		System.out.println(sb);
 
 		long end = System.nanoTime();
-		long taken = end - start;
+		printTimeTaken(end - start);
+
+    }
+
+	public static void printTimeTaken(long taken){
 		if(taken > 1000000000){
 			System.out.printf("\nTime taken: %d.%d s\n", taken / 1000000000, taken % 1000000000);
 		}
@@ -52,5 +56,6 @@ public class Main {
 				}
 			}
 		}
-    }
+	}
+
 }
