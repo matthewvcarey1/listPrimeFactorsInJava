@@ -23,6 +23,14 @@ public class Main {
 		ArrayList<Integer> factors = new ArrayList<>();
 		factors	= Factors.listFactors(num,primes, factors);
 		ArrayList<BaseExponent> lbe = BuildBaseExponentList.build(factors);
+		printBaseExponentFactors(lbe);
+
+		long end = System.nanoTime();
+		printTimeTaken(end - start);
+
+    }
+
+	public static void printBaseExponentFactors(ArrayList<BaseExponent> lbe){
 		boolean first = true;
 		StringBuffer sb = new StringBuffer();
 		for (BaseExponent be : lbe){
@@ -33,11 +41,7 @@ public class Main {
 			sb.append(be);
 		}
 		System.out.println(sb);
-
-		long end = System.nanoTime();
-		printTimeTaken(end - start);
-
-    }
+	}
 
 	public static void printTimeTaken(long taken){
 		if(taken > 1000000000){
