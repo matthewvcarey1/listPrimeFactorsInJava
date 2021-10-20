@@ -49,22 +49,22 @@ public class Main {
 		if(taken > 1000000000){
 			String outStr = String.format("%d.%09d", taken / 1000000000, taken % 1000000000);
 			outStr = outStr.replaceAll("0*$","").replaceAll("\\.$","");
-			System.out.printf("\nTime taken: %s s\n", outStr);
+			System.out.printf("\nTime taken: %ss\n", outStr);
 		}
 		else {
 			if (taken > 1000000) {
 				String outStr = String.format("%d.%06d", taken / 1000000, taken % 1000000);
 				outStr = outStr.replaceAll("0*$","").replaceAll("\\.$","");
-				System.out.printf("\nTime taken: %s ms\n", outStr);
+				System.out.printf("\nTime taken: %sms\n", outStr);
 			}
 			else{
 				if (taken > 1000) {
 					String outStr = String.format("%d.%03d", taken / 1000, taken % 1000);
 					outStr = outStr.replaceAll("0*$","").replaceAll("\\.$","");
-					System.out.printf("\nTime taken: %s \u03BCs\n", outStr);
+					System.out.printf("\nTime taken: %s\u03BCs\n", outStr);
 				}
 				else{
-					System.out.printf("\nTime taken: %d ns\n", taken);
+					System.out.printf("\nTime taken: %dns\n", taken);
 				}
 			}
 		}
