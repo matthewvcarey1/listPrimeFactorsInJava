@@ -1,5 +1,6 @@
 package uk.co.puce4.misc;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 
 
@@ -45,15 +46,21 @@ public class Main {
 
 	public static void printTimeTaken(long taken){
 		if(taken > 1000000000){
-			System.out.printf("\nTime taken: %d.%09d s\n", taken / 1000000000, taken % 1000000000);
+			String outStr = String.format("%d.%09d", taken / 1000000000, taken % 1000000000);
+			outStr = outStr.replaceAll("0*$","").replaceAll("\\.$","");
+			System.out.printf("\nTime taken: %s s\n", outStr);
 		}
 		else {
 			if (taken > 1000000) {
-				System.out.printf("\nTime taken: %d.%06d ms\n", taken / 1000000, taken % 1000000);
+				String outStr = String.format("%d.%09d", taken / 1000000, taken % 1000000);
+				outStr = outStr.replaceAll("0*$","").replaceAll("\\.$","");
+				System.out.printf("\nTime taken: %s s\n", outStr);
 			}
 			else{
 				if (taken > 1000) {
-					System.out.printf("\nTime taken: %d.%03d \u03BCs\n", taken / 1000, taken % 1000);
+					String outStr = String.format("%d.%09d", taken / 1000, taken % 1000);
+					outStr = outStr.replaceAll("0*$","").replaceAll("\\.$","");
+					System.out.printf("\nTime taken: %s s\n", outStr);
 				}
 				else{
 					System.out.printf("\nTime taken: %d ns\n", taken);
