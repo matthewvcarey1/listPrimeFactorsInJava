@@ -45,15 +45,15 @@ public class Main {
 
 	public static void printTimeTaken(long taken){
 		if(taken > 1000000000){
-			System.out.printf("\nTime taken: %d.%d s\n", taken / 1000000000, taken % 1000000000);
+			System.out.printf("\nTime taken: %d.%09d s\n", taken / 1000000000, taken % 1000000000);
 		}
 		else {
 			if (taken > 1000000) {
-				System.out.printf("\nTime taken: %d.%d ms\n", taken / 1000000, taken % 1000000);
+				System.out.printf("\nTime taken: %d.%06d ms\n", taken / 1000000, taken % 1000000);
 			}
 			else{
 				if (taken > 1000) {
-					System.out.printf("\nTime taken: %d.%d \u03BCs\n", taken / 1000, taken % 1000);
+					System.out.printf("\nTime taken: %d.%03d \u03BCs\n", taken / 1000, taken % 1000);
 				}
 				else{
 					System.out.printf("\nTime taken: %d ns\n", taken);
